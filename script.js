@@ -8,19 +8,19 @@ var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 var questionArea = document.getElementById("question-area");
+var answerBelow = document.getElementById("answer-below");
+var myElement = document.querySelector("#quiz-questions");
+var timeEl = document.querySelector(".time");
+var mainEl = document.getElementById("main");
 
 
-
-
-// var lastQuestion = questions.length - 1;
-// let runningQuestion = 0;
-// var currentAnswer = 0;
 var currentQuestion = 0;
+var secondsLeft = 80;
 
 function renderAnswerChoices(array) {
 
     var availableAnswers = [ {
-        question: "commonly used data type DO NOT include",
+        question: "Commonly used data type DO NOT include",
         choices: ["stings", "booleans", "alert", "numbers"],
         correctAnswer: "alert",
       },
@@ -33,34 +33,28 @@ function renderAnswerChoices(array) {
 
         question:  "Arrays in JavaScript can be used to store",
     
-         choiceA: "number and strings", 
-         choiceB: "other arrays", 
-         choiceC: "booleans", 
-         choiceD: "all of the above",
-         correctAnswer: "D"
+         choices: ["number and strings", "other arrays", "booleans", "all of the above"],
+         correctAnswer: "all of the above"
     },
     {
         question:  "String values must be enclosed within ______ when being assigned to variables.",
-    
-        choiceA: "commas", 
-        choiceB: "curly brackets", 
-        choiceC: "quotes", 
-        choiceD: "parenthesis",
-        correctAnswer: "B"
+        choices:["commas", "curly brackets", "quotes", "parenthesis"],
+        correctAnswer: "curly brackets"
     },
     {
         question:  "A very useful tool used during development and debugging for printing content to the debugger is",
     
-        choiceA: "JavaScript", 
-        choiceB: "terminal/ bash", 
-        choiceC: "for loops", 
-        choiceD: "console log",
-        correctAnswer: "C"
+        choices: ["JavaScript", "terminal/ bash", "for loops", "console log"],
+        correctAnswer: "for loops"
     }
     ];
     answerChoices.textContent = "";
-    var currentQandA = availableAnswers[currentQuestion]
-questionArea.textContent = currentQandA.question;
+    var currentQandA = availableAnswers[currentQuestion];
+    questionArea.textContent = currentQandA.question;
+    
+questions.setAttribute("style", "font-size: 45px", "font-weight: bold");
+answerChoices.setAttribute("style", "font-size: 30px");
+
 
     for (var i = 0; i < availableAnswers[currentQuestion].choices.length; i++) {
        // created an element
@@ -89,12 +83,7 @@ answerChoices.addEventListener("click", function(event){
             currentQuestion++; 
             renderAnswerChoices();
         };
-//         console.log(selectedAnswer);
-// // picks one of the choices given and displays it and removes all buttons. 
-//         answerChoices.textContent = "";
-//         var answerToDisplay = document.createElement("h3");
-//         answerToDisplay.textContent = selectedAnswer;
-//         answerChoices.append(answerToDisplay);
+
     }
 });
 startButton.addEventListener("click", function(){

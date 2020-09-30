@@ -12,12 +12,31 @@ var answerBelow = document.getElementById("answer-below");
 var myElement = document.querySelector("#quiz-questions");
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
+var timer = document.getElementById("timer");
+
+
 
 
 var currentQuestion = 0;
-var secondsLeft = 80;
+// timer
+// var startingSeconds = 750;
+// var time = startingSeconds * 60;
+
+// setInterval(updateTimer, 1000);
+
+// function updateTimer(){
+// var seconds = Math.floor(time/ 60);
+// var seconds = time % 75;
+
+// timer.innerHTML = `${seconds}`;
+//     time--;
+//     clearInterval(seconds);
+// }
+
+// clearTimeout(time);
 
 function renderAnswerChoices(array) {
+
 
     var availableAnswers = [ {
         question: "Commonly used data type DO NOT include",
@@ -53,14 +72,14 @@ function renderAnswerChoices(array) {
     questionArea.textContent = currentQandA.question;
     
 questions.setAttribute("style", "font-size: 45px", "font-weight: bold");
-answerChoices.setAttribute("style", "font-size: 30px");
+// answerChoices.setAttribute("style", "color: red");
 
 
     for (var i = 0; i < availableAnswers[currentQuestion].choices.length; i++) {
        // created an element
       var button = document.createElement("button");
        // content
-       button.setAttribute("class", "btn btn-primary")
+       button.setAttribute("class", "btn btn-primary");
       button.textContent = availableAnswers[currentQuestion].choices[i];
       button.setAttribute("answer-value", availableAnswers[currentQuestion].correctAnswer); 
      // append 
@@ -68,7 +87,27 @@ answerChoices.setAttribute("style", "font-size: 30px");
     }
 }
 
+
+// function setTime() {
+//     var timerInterval = setInterval(function() {
+//       secondsLeft--;
+//       timeEl.textContent = secondsLeft;
+  
+//       if(secondsLeft === 0) {
+//         clearInterval(timerInterval);
+//         sendMessage();
+//       }
+  
+//     }, 1000);
+//   }
+
+//   setTime(); 
+
+//   timerInterval.addEventListener
+
 // clicking and choosing button
+
+
 answerChoices.addEventListener("click", function(event){
     if(event.target.matches("button")){
         console.log("you clicked");

@@ -74,6 +74,7 @@ function renderAnswerChoices(array) {
         choices: ["JavaScript", "terminal/ bash", "for loops", "console log"],
         correctAnswer: "for loops"
     }
+    
     ];
 
     answerChoices.textContent = "";

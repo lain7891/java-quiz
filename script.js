@@ -13,27 +13,37 @@ var myElement = document.querySelector("#quiz-questions");
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 var timer = document.getElementById("timer");
+var submit = document.getElementById("submit");
 
 
 
 
+
+// var people = name;
+// var currentId = 0;
 var currentQuestion = 0;
+var timeLeft = 75;
+var correctAnswer = 0;
+
+
 // timer
-// var startingSeconds = 750;
-// var time = startingSeconds * 60;
+var startingSeconds = 1000;
+var time = startingSeconds * 60;
 
-// setInterval(updateTimer, 1000);
+setInterval(updateTimer, 1000);
 
-// function updateTimer(){
-// var seconds = Math.floor(time/ 60);
-// var seconds = time % 75;
+function updateTimer(){
+var seconds = Math.floor(time/ 60);
+var seconds = time % 75;
 
-// timer.innerHTML = `${seconds}`;
-//     time--;
-//     clearInterval(seconds);
-// }
+timer.innerHTML = `${seconds}`;
+    time--;
+    time.textContent = "";
+    clearInterval(updateTimer);
+}
 
-// clearTimeout(time);
+clearTimeout(time);
+updateTimer();
 
 function renderAnswerChoices(array) {
 
@@ -51,7 +61,6 @@ function renderAnswerChoices(array) {
     {
 
         question:  "Arrays in JavaScript can be used to store",
-    
          choices: ["number and strings", "other arrays", "booleans", "all of the above"],
          correctAnswer: "all of the above"
     },
@@ -62,18 +71,17 @@ function renderAnswerChoices(array) {
     },
     {
         question:  "A very useful tool used during development and debugging for printing content to the debugger is",
-    
         choices: ["JavaScript", "terminal/ bash", "for loops", "console log"],
         correctAnswer: "for loops"
     }
     ];
+
     answerChoices.textContent = "";
     var currentQandA = availableAnswers[currentQuestion];
     questionArea.textContent = currentQandA.question;
     
 questions.setAttribute("style", "font-size: 45px", "font-weight: bold");
 // answerChoices.setAttribute("style", "color: red");
-
 
     for (var i = 0; i < availableAnswers[currentQuestion].choices.length; i++) {
        // created an element
@@ -87,23 +95,6 @@ questions.setAttribute("style", "font-size: 45px", "font-weight: bold");
     }
 }
 
-
-// function setTime() {
-//     var timerInterval = setInterval(function() {
-//       secondsLeft--;
-//       timeEl.textContent = secondsLeft;
-  
-//       if(secondsLeft === 0) {
-//         clearInterval(timerInterval);
-//         sendMessage();
-//       }
-  
-//     }, 1000);
-//   }
-
-//   setTime(); 
-
-//   timerInterval.addEventListener
 
 // clicking and choosing button
 
@@ -125,10 +116,23 @@ answerChoices.addEventListener("click", function(event){
 
     }
 });
+// start button
+
 startButton.addEventListener("click", function(){
     // hides the code quiz display title for the next page
     quizContainer.style.display = "none";
     // var optionToDisplay = [currentAnswer].options;
     console.log("clicked");
     renderAnswerChoices();
+
+    // startButton.addEventListener("click", updateTimer);
+
+//     submit.addEventListener("click", function(){
+//         // hides the code quiz display title for the next page
+//         finalContainer.style.display = "none";
+//         // var optionToDisplay = [currentAnswer].options;
+//         console.log("clicked");
+//         renderAnswerChoices();
+// });
 });
+

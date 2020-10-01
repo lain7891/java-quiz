@@ -24,6 +24,7 @@ var submit = document.getElementById("submit");
 var currentQuestion = 0;
 var timeLeft = 75;
 var correctAnswer = 0;
+var availableAnswers = 0;
 
 
 // timer
@@ -73,7 +74,7 @@ function renderAnswerChoices(array) {
         question:  "A very useful tool used during development and debugging for printing content to the debugger is",
         choices: ["JavaScript", "terminal/ bash", "for loops", "console log"],
         correctAnswer: "for loops"
-    }
+    },
     
     ];
 
@@ -95,6 +96,7 @@ questions.setAttribute("style", "font-size: 45px", "font-weight: bold");
      answerChoices.append(button);
     }
 }
+
 
 
 // clicking and choosing button

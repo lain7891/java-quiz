@@ -19,10 +19,10 @@ For this assignment we needed to create a JavaScript quiz from scratch.  Once th
 
 https://lain7891.github.io/java-quiz/
 
-<img src=".assets/images/startpage.png">
-<img src=".assets/images/question1.png">
-<img src=".assets/images/question2.png">
-<img src=".assets/images/question3.png">
+<img src="assets/images/startpage.png">
+<img src="assets/images/question1.png">
+<img src="assets/images/question2.png">
+<img src="assets/images/question3.png">
 
 This assignment was incredibly difficult for me to complete in the time frame we were given. While I have an idea of what concepts are needed to make certain things run in the quiz, it is putting them together that confuse me. My tutor was able to help me with some issues, but not enough to help me understand how to piece everything together.
 

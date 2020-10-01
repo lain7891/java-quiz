@@ -4,18 +4,25 @@ For this assignment we needed to create a JavaScript quiz from scratch.  Once th
 
 #Installation
 
-•	Created a git repository
-•	Created two files (HTML, JS) were all created but it was the JS file that was mostly used and updated.
-•	What I used to create the quiz from JavaScript:
-o	Document Object Model (DOM)
-o	Functions
-o	Conditionals (If/Else statements)
-o	Console logging
-o	Strings and alerts
-o	Event listeners
-o	For Loops
-o	Set Intervals
-o	Set Attributes
+*	Created a git repository
+*	Created two files (HTML, JS) were all created but it was the JS file that was mostly used and updated.
+*	What I used to create the quiz from JavaScript:
+*	Document Object Model (DOM)
+*	Functions
+*	Conditionals (If/Else statements)
+*	Console logging
+*	Strings and alerts
+*	Event listeners
+*	For Loops
+*	Set Intervals
+*	Set Attributes
+
+https://lain7891.github.io/java-quiz/
+
+<img src=".assets/images/startpage.png">
+<img src=".assets/images/question1.png">
+<img src=".assets/images/question2.png">
+<img src=".assets/images/question3.png">
 
 This assignment was incredibly difficult for me to complete in the time frame we were given. While I have an idea of what concepts are needed to make certain things run in the quiz, it is putting them together that confuse me. My tutor was able to help me with some issues, but not enough to help me understand how to piece everything together.
 

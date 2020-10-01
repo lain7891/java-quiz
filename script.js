@@ -15,7 +15,9 @@ var mainEl = document.getElementById("main");
 var timer = document.getElementById("timer");
 var submit = document.getElementById("submit");
 
-
+var final = document.getElementById("final");
+var finished = document.getElementById("finished");
+var name = document.getElementById("name");
 
 
 
@@ -82,6 +84,7 @@ function renderAnswerChoices(array) {
     var currentQandA = availableAnswers[currentQuestion];
     questionArea.textContent = currentQandA.question;
     
+    
 questions.setAttribute("style", "font-size: 45px", "font-weight: bold");
 // answerChoices.setAttribute("style", "color: red");
 
@@ -97,7 +100,16 @@ questions.setAttribute("style", "font-size: 45px", "font-weight: bold");
     }
 }
 
-
+function saveScore(userInitials, score){
+    var initials = document.getElementById("initials")
+    if(initials.value==""){
+        answerStatus.textContent = "Initials can't be blank!";
+    } else{
+        myStorage = window.localStorage;
+        myStorage.setItem(userInitials, score);
+        window.location.href = "index.html"
+    }
+}
 
 // clicking and choosing button
 
@@ -128,6 +140,14 @@ startButton.addEventListener("click", function(){
     console.log("clicked");
     renderAnswerChoices();
 
+});
+
+    document.getElementById("submit").onclick = function () {
+        finalContainer.style.display = "none";
+        location.href = "index.html";
+    }; renderSubmit();
+
+
     // startButton.addEventListener("click", updateTimer);
 
 //     submit.addEventListener("click", function(){
@@ -137,5 +157,4 @@ startButton.addEventListener("click", function(){
 //         console.log("clicked");
 //         renderAnswerChoices();
 // });
-});
 
